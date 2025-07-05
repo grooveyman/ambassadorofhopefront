@@ -37,6 +37,7 @@ const Registration: React.FC = () => {
                 headers: { 'Content-Type': 'application/json', Authorization:`Bearer ${process.env.REACT_APP_TOKEN}` },
                 body: JSON.stringify(data),
             });
+            console.log('URL: '+`${process.env.REAT_APP_API_BASE}/api/registration/register`);
 
             console.log(response);
             if (!response.ok) throw new Error(`Server error: ${response.statusText}`);
