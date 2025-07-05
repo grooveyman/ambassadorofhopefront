@@ -16,6 +16,7 @@ const Registration: React.FC = () => {
         residence: "",
         contact: ""
     });
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -24,13 +25,20 @@ const Registration: React.FC = () => {
         }));
     }
 
-    const handleSubmit = async () => {
+    const isValidEmail = (email: string): boolean => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
 
+    const handleSubmit = async () => {
+        setLoading(true);
 
         try {
             if (!data.name || !data.email || !data.contact || !data.residence) {
                 throw new Error('Validation failed. All fields are required');
             }
+
+            if(!isValidEmail(data.email)) throw new Error('Please enter a valid email');
             
             const response = await fetch(`${process.env.REACT_APP_API_BASE}/registration/register`, {
                 method: 'POST',
@@ -51,6 +59,8 @@ const Registration: React.FC = () => {
         } catch (error: any) {
             console.log(`Error subitting form: ${error}`);
             toast.error(`Failed to register: ${error.message}`);
+        }finally{
+            setLoading(false);
         }
     }
 
@@ -82,7 +92,16 @@ const Registration: React.FC = () => {
                                         <input className="form-control mt-3" value={data.email} onChange={handleChange} name="email" type="email" placeholder="Enter Email" />
                                         <input className="form-control mt-3" value={data.contact} onChange={handleChange} name="contact" type="text" placeholder="Enter Contact" />
                                         <input className="form-control mt-3" value={data.residence} onChange={handleChange} name="residence" type="text" placeholder="Enter Residence/Location" />
-                                        <button className="btn btn-success mt-3" onClick={handleSubmit}>Submit</button>
+                                        <button className="btn btn-success mt-3" onClick={handleSubmit}>
+                                        {loading ? (
+                                            <>
+                                            <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                            Submitting...
+                                            </>
+                                        ) : (
+                                            'Submit'
+                                        )}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
