@@ -1,0 +1,33 @@
+body {
+
+  background-color: #282c34 !important;
+  color: white !important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* 
+@media (min-width: 810px){
+  .left-pane{
+    display: none;
+  }
+  .formcontent{
+    display: block;
+    width:100% !important;
+  }
+} */
+
+.img-left{
+    background-image: url('../public/images/flyer.jpg');
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
