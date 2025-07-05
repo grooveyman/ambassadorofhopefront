@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ambassadorofhopefront/static/css/main.83c01b75.css",
+    "main.js": "/ambassadorofhopefront/static/js/main.b0adefa9.js",
+    "static/js/453.7d49b423.chunk.js": "/ambassadorofhopefront/static/js/453.7d49b423.chunk.js",
+    "static/media/flyer.jpg": "/ambassadorofhopefront/static/media/flyer.1ccbf5924a81450a1a64.jpg",
+    "index.html": "/ambassadorofhopefront/index.html",
+    "main.83c01b75.css.map": "/ambassadorofhopefront/static/css/main.83c01b75.css.map",
+    "main.b0adefa9.js.map": "/ambassadorofhopefront/static/js/main.b0adefa9.js.map",
+    "453.7d49b423.chunk.js.map": "/ambassadorofhopefront/static/js/453.7d49b423.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83c01b75.css",
+    "static/js/main.b0adefa9.js"
+  ]
+}
