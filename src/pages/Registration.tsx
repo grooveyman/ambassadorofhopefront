@@ -32,12 +32,12 @@ const Registration: React.FC = () => {
                 throw new Error('Validation failed. All fields are required');
             }
             
-            const response = await fetch(`${process.env.REAT_APP_API_BASE}/api/registration/register`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE}/registration/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Authorization:`Bearer ${process.env.REACT_APP_TOKEN}` },
                 body: JSON.stringify(data),
             });
-            console.log('URL: '+`${process.env.REAT_APP_API_BASE}/api/registration/register`);
+            console.log('URL: '+`${process.env.REACT_APP_API_BASE}/api/registration/register`);
 
             console.log(response);
             if (!response.ok) throw new Error(`Server error: ${response.statusText}`);
