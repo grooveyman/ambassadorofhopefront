@@ -32,7 +32,7 @@ const Registration: React.FC = () => {
                 throw new Error('Validation failed. All fields are required');
             }
             
-            const response = await fetch(`${process.env.REAT_APP_API_URL}/registration/register`, {
+            const response = await fetch(`https://ambassadorofhope.onrender.com/api/registration/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Authorization:`Bearer ${process.env.REACT_APP_TOKEN}` },
                 body: JSON.stringify(data),
