@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import { toast } from "react-toastify";
-
+import coverimg from "../assets/images/cover.jpg";
 
 interface FormData {
     email: string;
@@ -85,6 +85,7 @@ const Registration: React.FC = () => {
                             </div>
                             <div className={`${isSmallScreen ? 'col-md-12' : 'col-md-6'} col-sm-12 col-xs-6 col-lg-12 col-xl-6`}>
                                 <div className="formcontent">
+                                    <div><img src={coverimg} width={"100%"}/></div>
                                     <h4>Kindly fill this form to register</h4>
                                     <div className="row form mt-5">
                                         <input className="form-control" value={data.name} onChange={handleChange} name="name" type="text" placeholder="Enter Name" />
